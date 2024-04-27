@@ -1,0 +1,33 @@
+Q1: 
+1.	AD
+2.	27
+Q2:
+1.	2287
+2.	1486
+Q3:
+1.	00110101
+2.	001101110101
+Q4:
+Hex:
+1.	E0
+2.	88
+Binary:   (wrong answer)
+1.	100101
+2.	1000 0010
+Q5:
+#include <iostream>
+#include <bitset>
+#include <sstream>
+using namespace std;
+
+int main() {
+    string binaryInput;
+    cout << "Enter a binary number: ";
+    cin >> binaryInput;
+    bitset<32> binary(binaryInput);
+    stringstream hexStream;
+    hexStream << hex << binary.to_ulong();
+    string hexadecimal = hexStream.str();
+    cout << "Hexadecimal equivalent: " << hexadecimal << endl;
+    return 0;
+}
