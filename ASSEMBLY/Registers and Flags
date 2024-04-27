@@ -1,0 +1,47 @@
+a)	EAX: 00 00 00 8A
+a.	CF: 0
+b.	OF: 0
+c.	SF: 0
+d.	ZF: 0
+
+b)	EAX: 00 00 00 8A   (wrong answer)
+a.	CF: 1
+b.	OF: 0
+c.	SF: 0 
+d.	ZF: 0
+
+c)	EAX: 00 00 00 00   (wrong answer)
+a.	CF: 0
+b.	OF: 0
+c.	SF: 0
+d.	ZF: 1
+
+d)	EAX: B0 00 00 00   (wrong answer)
+a.	CF: 1
+b.	OF: 1
+c.	SF: 1
+d.	ZF: 0
+
+e)	EAX: 00 00 00 00
+a.	CF: 1	
+b.	OF: 0
+c.	SF: 0
+d.	ZF: 1
+
+f)	EAX: 80 00 00 9F   (wrong answer)
+a.	CF: 1
+b.	OF: 1
+c.	SF: 1
+d.	ZF: 0
+
+g)	EAX: 00 00 00 9A
+a.	CF: 0
+b.	OF: 0
+c.	SF: 0
+d.	ZF: 0
+
+h)	EAX: 00 00 03 B9
+a.	CF: 0
+b.	OF: 0
+c.	SF: 0
+d.	ZF: 0
