@@ -1,0 +1,48 @@
+.586
+.MODEL FLAT
+.STACK 4096
+INCLUDE io.h
+
+.DATA
+Inputstr1 BYTE 100 DUP (?)
+Inputstr2 BYTE 100 DUP (?)
+Outputstr BYTE 200 DUP (?)
+prompt1 BYTE "Enter the first string: ", 0
+prompt2 BYTE "Enter the second string: ", 0
+displayLbl BYTE "Concatenated string: ", 0
+
+.CODE
+_MainProc PROC
+    input prompt1, Inputstr1, 100
+    input prompt2, Inputstr2, 100
+
+    lea esi, Inputstr1
+    lea edi, Outputstr
+    push esi
+    push edi
+    cld
+
+    whileNoNul1:
+        cmp BYTE PTR [esi], 0
+        je endWhileNoNul1
+        movsb
+        loop whileNoNul1
+    endWhileNoNul1:
+
+    mov esi, OFFSET Inputstr2
+    whileNoNul2:
+        cmp BYTE PTR [esi], 0
+        je endWhileNoNul2
+        movsb
+        loop whileNoNul2
+    endWhileNoNul2:
+
+    mov BYTE PTR [edi], 0
+    pop esi
+    pop edi
+
+    output displayLbl, Outputstr
+    mov eax, 0
+    ret
+_MainProc ENDP
+END
